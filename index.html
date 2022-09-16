@@ -8,6 +8,30 @@
     <link rel="stylesheet" href="./styles/chief-slider.css">
     <link rel="stylesheet" href="style.css">
     <title>thecrucible</title>
+    <style>
+        @scroll-timeline progressTimeline {}
+
+        #progress {
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100%;
+            height: 10px;
+            background-color: red;
+            animation-timeline: progressTimeline;
+            animation: 1s progress linear;
+        }
+
+        @keyframes progress {
+            from {
+                width: 0%;
+            }
+
+            to {
+                width: 100%;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -31,6 +55,7 @@
                     <img src="./images/svgs/burger_btn.svg" alt="meun btn">
                 </div>
             </div>
+            <div id=progress></div>
         </div>
         <div class="hedaer-bottom">
             <div class="hedaer-bottom-buttones">
@@ -162,6 +187,7 @@
             </div>
         </div>
     </main>
+    <script src="./scripts/scroll-timeline.js"></script>
     <script src="./scripts/chief-slider.js"></script>
     <script>
         const $slider = document.querySelector('[data-slider="chiefslider"]');
